@@ -1,13 +1,13 @@
 package aplication;
 
-import boardgame.Posicao;
-import boardgame.Tabuleiro;
+import xadrez.PartidaXadrez;
 
 public class Program {
 
 	public static void main(String [] args) {
 		
-		Tabuleiro tb = new Tabuleiro(8,8);
+		PartidaXadrez px = new PartidaXadrez();
+		UI.imprimirTabuleiro(px.getPecas());
 		
 	}
 }
