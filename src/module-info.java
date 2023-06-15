@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author jksjo
- *
- */
-module CharSystem {
-}
