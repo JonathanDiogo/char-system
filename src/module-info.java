@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author jksjo
+ *
+ */
+module CharSystem {
+}
