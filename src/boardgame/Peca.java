@@ -4,7 +4,7 @@ import javax.swing.text.Position;
 
 public class Peca {
 
-	protected Position posicao;
+	protected Posicao posicao;
 	private Tabuleiro tabuleiro;
 	
 	

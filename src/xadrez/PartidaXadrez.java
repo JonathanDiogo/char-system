@@ -2,7 +2,10 @@ package xadrez;
 
 import java.awt.Color;
 
+import boardgame.Posicao;
 import boardgame.Tabuleiro;
+import xadrez.pecas.Rei;
+import xadrez.pecas.Torre;
 
 public class PartidaXadrez {
 
@@ -16,6 +19,7 @@ public class PartidaXadrez {
 	
 	public PartidaXadrez() {
 		tabuleiro = new Tabuleiro(8,8);
+		iniciarPartida();
 	}
 	
 	public XadrezPeca[][] getPecas(){
@@ -27,6 +31,11 @@ public class PartidaXadrez {
 		}
 		return matriz;
 		
+	}
+	
+	private void iniciarPartida() {
+		tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
+		tabuleiro.lugarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 1));
 	}
 	
 }
