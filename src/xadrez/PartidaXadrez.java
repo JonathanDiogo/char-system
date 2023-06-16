@@ -34,8 +34,10 @@ public class PartidaXadrez {
 	}
 	
 	private void iniciarPartida() {
-		tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
-		tabuleiro.lugarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 1));
+		
+		tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(1, 1));
+		tabuleiro.lugarPeca(new Torre(tabuleiro, Cor.PRETO), new Posicao(6, 5));
+		
 	}
 	
 }
