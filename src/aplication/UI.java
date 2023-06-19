@@ -37,13 +37,7 @@ public class UI {
 	
 	public static void imprimirTabuleiro(XadrezPeca[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-			limparTela();
-=======
->>>>>>> 2d85e3300469964d65f29f7a9bf5f78a9bd1c009
-=======
->>>>>>> 2d85e3300469964d65f29f7a9bf5f78a9bd1c009
+
 			System.out.print(8 - i + " ");
 			for (int j = 0; j < pecas.length; j++) {
 				printPeca(pecas[i][j]);
