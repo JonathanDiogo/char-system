@@ -64,6 +64,13 @@ public class PartidaXadrez {
 		tabuleiro.lugarPeca(p, destino);
 		return pecaCapturada;
 	}
+	
+	public boolean[][] possiveisMovimentos(XadrezPosicao posicaoOrigem) {
+		Posicao posicao = posicaoOrigem.paraPosicao();
+		validarPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).possiveisMovimentos();
+		
+	}
 
 	private void iniciarPartida() {
 
