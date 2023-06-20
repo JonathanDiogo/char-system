@@ -11,12 +11,14 @@ public class Torre extends XadrezPeca{
 
 	}
 
-
-	
-
-
 	@Override
 	public String toString() {
 		return "T";
+	}
+	
+	@Override
+	public boolean[][] possiveisMovimentos() {
+		boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
+		return mat;
 	}
 }
