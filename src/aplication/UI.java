@@ -39,6 +39,28 @@ public class UI {
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	}
+	
+	public static XadrezPosicao lerPosicaoXadrez(Scanner sc) {
+		try {
+			String s = sc.nextLine();
+			char coluna = s.charAt(0);
+			int linha = Integer.parseInt(s.substring(1));
+			return new XadrezPosicao(coluna, linha);
+			
+		} catch (RuntimeException e) {
+			throw new InputMismatchException("Erro lendo posição de xadrez, valores válidos são de 'a1' até 'h8' !");
+		}
+		
+	}
+	
+	public static void imprimirPartida(PartidaXadrez partida, List<XadrezPeca> capturada) {
+		imprimirTabuleiro(partida.getPecas());
+		System.out.println();
+		imprimirCapturaPecas(capturada);
+		System.out.println();
+		System.out.println("Turno: " + partida.getTurno());
+		System.out.println("Esperando o jogador: " + partida.getAtualJogador());
+	}
 
 	public static void imprimirTabuleiro(XadrezPeca[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
@@ -52,14 +74,7 @@ public class UI {
 		System.out.print("  a b c d e f g h");
 	}
 
-	public static void imprimirPartida(PartidaXadrez partida, List<XadrezPeca> capturada) {
-		imprimirTabuleiro(partida.getPecas());
-		System.out.println();
-		imprimirCapturaPecas(capturada);
-		System.out.println();
-		System.out.println("Turno: " + partida.getTurno());
-		System.out.println("Esperando o jogador: " + partida.getAtualJogador());
-	}
+	
 
 	public static void imprimirTabuleiro(XadrezPeca[][] pecas, boolean[][] possiveisMovimentos) {
 		for (int i = 0; i < pecas.length; i++) {
@@ -88,17 +103,7 @@ public class UI {
 		System.out.print(" ");
 	}
 
-	public static XadrezPosicao lerPosicaoXadrez(Scanner sc) {
-		try {
-			String s = sc.nextLine();
-			char coluna = s.charAt(0);
-			int linha = Integer.parseInt(s.substring(1));
-			return new XadrezPosicao(coluna, linha);
-		} catch (RuntimeException e) {
-			throw new InputMismatchException("Erro lendo posição de xadrez, valores válidos são de 'a1' até 'h8' !");
-		}
-		
-	}
+	
 	private static void imprimirCapturaPecas(List<XadrezPeca> capturada) {
 		List<XadrezPeca> branca = capturada.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collectors.toList());
 		List<XadrezPeca> preto = capturada.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collectors.toList());
