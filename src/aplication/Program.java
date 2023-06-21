@@ -20,7 +20,7 @@ public class Program {
 			try {
 
 				UI.limparTela();
-				UI.imprimirTabuleiro(px.getPecas());
+				UI.imprimirPartida(px);
 				System.out.println();
 				System.out.print("Origem: ");
 				XadrezPosicao origem = UI.lerPosicaoXadrez(sc);
